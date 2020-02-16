@@ -15,11 +15,9 @@ let result;
 
 
 function calculateResult(arr){
-
   result = 0;
 
   return arr.map(( val , idx ) => {
-
       if(typeof val === 'string' && result === 0){
          return result = calc[val](array[idx - 1 ] , array[idx + 1])
       }else if(typeof val === 'string' && result !== 0) {
@@ -32,14 +30,11 @@ function calculateResult(arr){
 }
 
 BUTTONS.onclick = function({target: {innerText}}){
-
     if(innerText === 'C'){
         array = [];
         return INPUT.value = null;
     }
-
     if(innerText === '='){
-        console.log(array)
         calculateResult(array);
         return INPUT.value = result;
     }
@@ -60,8 +55,8 @@ BUTTONS.onclick = function({target: {innerText}}){
         }else {
             return array.push(Number(innerText))
         }
-
     }
+
     return array.push(innerText)
 }
 
