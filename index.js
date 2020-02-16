@@ -39,6 +39,7 @@ BUTTONS.onclick = function({target: {innerText}}){
     }
 
     if(innerText === '='){
+        console.log(array)
         calculateResult(array);
         return INPUT.value = result;
     }
@@ -50,7 +51,9 @@ BUTTONS.onclick = function({target: {innerText}}){
     if(numbers.includes(innerText)){
         if(array[array.length - 1] === '.'){
             const oldNumber = array[array.length - 2];
-            return array.splice(Number(`${oldNumber}.${innerText}`))
+            array.pop();
+            array.pop();
+            return array.push(Number(`${oldNumber}.${innerText}`))
         }
         if(typeof array[array.length - 1] === 'number'){
             const oldNumber = array[array.length - 1]
