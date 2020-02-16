@@ -1,7 +1,7 @@
 
 const INPUT = document.querySelector('.input');
 const BUTTONS = document.querySelector('.buttons');
-const numbers = ['1','2','3','4','5','6','7','8','9'];
+const numbers = ['0','1','2','3','4','5','6','7','8','9'];
 
 const calc = {
     "+":function(a,b){ return a + b },
@@ -35,7 +35,7 @@ BUTTONS.onclick = function({target: {innerText}}){
 
     if(innerText === 'C'){
         array = [];
-        return INPUT.value = "0";
+        return INPUT.value = null;
     }
 
     if(innerText === '='){
@@ -44,9 +44,7 @@ BUTTONS.onclick = function({target: {innerText}}){
         return INPUT.value = result;
     }
 
-    if(INPUT.value === "0"){
-        INPUT.value = innerText;
-    }else INPUT.value += innerText;
+ INPUT.value += innerText;
 
     if(numbers.includes(innerText)){
         if(array[array.length - 1] === '.'){
